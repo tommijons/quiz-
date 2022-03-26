@@ -31,7 +31,7 @@ public class QuizServiceImplementation implements QuizService {
         //1 = General Knowledge
         //2 = Geography
         //3 = Sports
-/*
+
         quizRepository.deleteAll();
         //Entertainment = 10
         quizRepository.save(new Question(0, "Who portrays the character 'Paul' in the film Dune(2021)?", "Timothée Chalamet", "Jason Momoa", "Timothée Chalamet", "Harry Styles", "Dave Bautista"));
@@ -89,7 +89,7 @@ public class QuizServiceImplementation implements QuizService {
         quizRepository.save(new Question(3, "How many NBA championships did Michael Jordan win with the Chicago Bulls?", "6", "4", "5", "6", "7"));
         quizRepository.save(new Question(3, "How many medals did China win at the Beijing Olympics?", "100", "37", "51", "67", "100"));
 
-        scoreRepository.deleteAll();*/
+        //scoreRepository.deleteAll();
 
         // Mögulega gera category repository til að adda categories ?
         categories.add(new Category(0, "Entertainment"));
