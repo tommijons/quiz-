@@ -25,13 +25,13 @@ public class AccountRestController {
         List<Account> accounts = accountService.findAll();
         return accounts;
     }
-/*
+
     // save account
     // TODO check if username and password already exist.
     @PostMapping("/signup")
     Account newAccount(@RequestBody Account newAccount) {
         return accountService.save(newAccount);
     }
-    */
+
 
 }

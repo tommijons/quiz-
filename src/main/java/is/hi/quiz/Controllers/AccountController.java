@@ -39,7 +39,7 @@ public class AccountController {
         account.setAdmin(false);
         return "signup";
     }
-
+/*
     // Signs up user if all is good in the input fields and user does not exist.
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public String signupPOST(Account account, BindingResult result, Model model){
@@ -58,7 +58,7 @@ public class AccountController {
         model.addAttribute("alreadyExistsInput", true);
         return "signup";
     }
-
+*/
     // Returns log in page
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginGET(Account account){
