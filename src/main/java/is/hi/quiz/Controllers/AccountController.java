@@ -32,14 +32,14 @@ public class AccountController {
         this.quizService = quizService;
 
     }
-
+/*
     // Return sign up page
     @RequestMapping(value = "/signup", method = RequestMethod.GET)
     public String signupGET(Account account){
         account.setAdmin(false);
         return "signup";
     }
-/*
+
     // Signs up user if all is good in the input fields and user does not exist.
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public String signupPOST(Account account, BindingResult result, Model model){
