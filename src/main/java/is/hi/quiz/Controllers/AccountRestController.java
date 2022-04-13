@@ -3,10 +3,7 @@ package is.hi.quiz.Controllers;
 import is.hi.quiz.Persistance.Entities.Account;
 import is.hi.quiz.Services.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,12 +23,27 @@ public class AccountRestController {
         return accounts;
     }
 
+    //login
+    @RequestMapping(value = "loginAPI", method = RequestMethod.POST)
+    public Account loginPost(@RequestBody Account account) {
+        Account exists = accountService.login(account);
+        if (exists != null) {
+            return account;
+        }
+        else return null;
+    }
+
     // save account
-    // TODO check if username and password already exist.
     @PostMapping("/signup")
     Account newAccount(@RequestBody Account newAccount) {
-        return accountService.save(newAccount);
+        Account exists = accountService.findByUsername(newAccount.getUsername());
+        if (exists == null) {
+            return accountService.save(newAccount);
+        }
+        else return null;
     }
+
+
 
 
 }
