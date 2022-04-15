@@ -1,12 +1,13 @@
 package is.hi.quiz.Controllers;
 
+import is.hi.quiz.Persistance.Entities.Account;
 import is.hi.quiz.Persistance.Entities.Category;
 import is.hi.quiz.Persistance.Entities.Question;
+import is.hi.quiz.Persistance.Entities.Scores;
 import is.hi.quiz.Services.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -39,4 +40,19 @@ public class QuizRestController {
 
         return categories;
     }
+
+    // Returns top scores for all time high scorers
+    @RequestMapping(value = "/topscoresAPI", method = RequestMethod.GET)
+    public List<Scores> getTopScores() {
+        List <Scores> scores = quizService.findAllScores();
+        return scores;
+    }
+
+    // save score
+    @PostMapping("/saveScore")
+    Scores score(@RequestBody Scores score) {
+        return quizService.saveScores(score);
+    }
+
+
 }

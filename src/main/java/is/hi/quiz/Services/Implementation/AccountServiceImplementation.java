@@ -5,6 +5,7 @@ import is.hi.quiz.Persistance.Entities.Category;
 import is.hi.quiz.Persistance.Entities.Question;
 import is.hi.quiz.Persistance.Entities.Statistics;
 import is.hi.quiz.Persistance.Repository.AccountRepository;
+import is.hi.quiz.Persistance.Repository.ScoreRepository;
 import is.hi.quiz.Persistance.Repository.StatisticsRepository;
 import is.hi.quiz.Services.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +26,9 @@ public class AccountServiceImplementation implements AccountService {
     public AccountServiceImplementation(AccountRepository accountRepository,StatisticsRepository statisticsRepository){
         this.accountRepository = accountRepository;
         this.statisticsRepository=statisticsRepository;
-        statisticsRepository.deleteAll();
-        accountRepository.deleteAll();
-        accountRepository.save(new Account("admin","1234","email@email.com","Admin Adminsson",true));
+        //statisticsRepository.deleteAll();
+        //accountRepository.deleteAll();
+        //accountRepository.save(new Account("admin","1234","email@email.com","Admin Adminsson",true));
     }
 
     @Override
