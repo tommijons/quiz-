@@ -33,6 +33,7 @@ public class QuizServiceImplementation implements QuizService {
         //3 = Sports
 
         quizRepository.deleteAll();
+        scoreRepository.deleteAll();
         //Entertainment = 10
         quizRepository.save(new Question(0, "Who portrays the character 'Paul' in the film Dune(2021)?", "Timothée Chalamet", "Jason Momoa", "Timothée Chalamet", "Harry Styles", "Dave Bautista"));
         quizRepository.save(new Question(0, "Which member of the band 'One Direction' famously left the band on the 25th of March 2015?", "Zayn", "Harry", "Louis", "Neil", "Zayn"));

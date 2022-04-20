@@ -34,6 +34,13 @@ public class QuizRestController {
 
     }
 
+    @RequestMapping(value="/deleteQuestion/{id}",method = RequestMethod.DELETE)
+    public String deleteQuestion(@PathVariable("id")long id){
+        Question questionToDelete = quizService.findById(id);
+        quizService.delete(questionToDelete);
+        return null;
+    }
+
     @RequestMapping("/categories")
     public List<Category> getCategories() {
         List<Category> categories = quizService.findAllCategories();
